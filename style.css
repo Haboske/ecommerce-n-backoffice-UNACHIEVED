@@ -40,9 +40,6 @@ header{
 								font-size: 1rem;
 								display: flex;
             }
-						header nav:last-of-type a:nth-child(1){
-							color: white;
-						}
 						.link{
 							width: 10rem;
 							font-size: 0.1rem;
