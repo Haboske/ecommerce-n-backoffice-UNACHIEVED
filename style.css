@@ -35,21 +35,30 @@ header{
         justify-content: flex-end;
         align-items: center;
     }
-            header nav a:first-child{
+            header nav:first-of-type a{
                 color: white;
-
+								font-size: 1rem;
+								display: flex;
             }
-            header nav:first-of-type a:first-of-type~a{
-                background: url(svg/account.svg) no-repeat;
-                background-size: contain;
-                order: 3;
-            }
-            header nav:first-of-type a#link_cart{
-                background: url(svg/cart.svg) no-repeat;
-                background-size: contain;
-                background-position: center;
-                order: 2;
-            }
+						header nav:last-of-type a:nth-child(1){
+							color: white;
+						}
+						.link{
+							width: 10rem;
+							font-size: 0.1rem;
+						}
+						#link_account{
+							background: url(svg/account.svg)
+						}
+						#link_cart{
+							background: url(svg/cart.svg)
+						}
+						#link_cart,#link_account{
+							background-position: center;
+							background-repeat: no-repeat;
+							background-size: contain;
+							width: 2rem;
+						}
         form{
             width: 100%;
             height: 2.6rem;
@@ -58,7 +67,7 @@ header{
             header input[type=search]{
                 width: 85%;
                 height: 100%;
-    
+
                 padding: 0 4vw;
                 border: none;
             }
@@ -68,7 +77,7 @@ header{
 
                 border: none;
                 background-color: white;
-                
+
             }
             header button[type=submit] div{
                 width: 100%;
@@ -86,12 +95,13 @@ header{
             display: flex;
             flex-direction: row;
         }
- 
-@media screen and (min-width: 1001px) and (max-width: 3441px){
+
+@media screen and (min-width: 1050px) and (max-width: 3444px){
     header{
         height: 16vh;
         padding: 0 4vw;
         flex-direction: row;
+				align-items: center;
     }
         header img{
             position: fixed;
@@ -101,16 +111,46 @@ header{
         }
         header nav:first-of-type{
             order: 3;
+						width: 30%;
+						margin-left: auto;
+						height: 2rem;
         }
+				.link_cart_t,.link_account_t{
+					display: flex;
+					align-items: center;
+					margin-left: 4vh;
+				}
+        header nav:first-of-type #link_account,header nav:first-of-type #link_cart{
+            height: 2.3rem;
+            width: 2.3rem;
+						margin-left: 1.5vh;
+				}
+				.link_cart_t{
+					order: 1;
+				}
+				.link_account_t{
+					order: 2;
+				}
         form{
             order: 2;
             width: 35%;
             align-self: center;
             margin: 2vh 0 0 23vh;
         }
+				header form input[type=search]{
+					padding: 0 0 0 2vw
+				}
+				header button[type=submit]{
+					width: auto;
+				}
+				header button[type=submit] div{
+					width: 2.5rem;
+					height: 2.5rem;
+				}
         header nav:last-of-type{
             order: 4;
-            margin: 2vh 0 0 23vh;
+            margin: 0 0 0 23vh;
+						overflow-x: scroll;
         }
         header nav:last-child a:first-of-type{
             display: none;
@@ -127,14 +167,18 @@ header{
             margin-right: 3vw;
             width: auto;
             padding: 1vh 2vw;
+            white-space: nowrap;
         }
-        .prod_tablet{
+        header nav:last-child .prod_tablet:nth-child(2){
+            padding: 1vh 2vw 1vh 0;
         }
 
 }
-@media screen and (min-width: 641px) and (max-width: 1000px){
+@media screen and (min-width: 641px) and (max-width: 1049px){
     header{
-        padding: 1.5vh 5vw 0 5vw;
+				height: 10.7rem;
+        padding: 0.5vh 5vw 0.5vh 5vw;
+				align-items: center;
     }
         header img{
             height: 4.5rem;
@@ -145,15 +189,26 @@ header{
             order: 3;
             align-self: center;
             margin-left: auto;
+						width: 20%;
+						align-items: center;
         }
-            header nav:first-of-type a:first-of-type{
-                display: none;
-            }
             header nav:first-of-type a{
                 height: 45px;
-                width: 45px;
+                width: 100%;
                 margin-left: 5vw;
+								display: flex;
+								align-items: center;
+								white-space: nowrap;
             }
+				header nav:first-of-type  a.link_cart_t{
+					display: none;
+				}
+				#link_account{
+					height: 2rem;
+					width: 2rem;
+					margin-left: 2vw;
+				}
+
         form{
             order:2;
             height: 3.5rem;
@@ -225,16 +280,20 @@ header{
         header nav{
             width: 70%;
             height: 3.5rem;
-            margin-left: auto;   
+            margin-left: auto;
         }
-            header nav a:first-child{
-                margin: 0 4vw 0 0;
-                font-size: 0.8rem;
-            }
-            header nav a~a{
-            height: 1.8rem;
-            width: 1.8rem;
-            }
+						header nav:first-of-type a.link_cart_t{
+							display: none;
+						}
+						#link_account{
+							height: 2rem;
+							width: 2rem;
+							margin-left: 1rem;
+						}
+						header nav:first-of-type a.link_account_t{
+							font-size: 1rem;
+							align-items: center;
+						}
         form{
             width: 100%;
             height: 2.6rem;
@@ -263,7 +322,12 @@ header{
             flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start;
+
         }
+				header nav:last-child .prod_cat{
+					visibility: hidden;
+					opacity: 0;
+				}
         header nav:last-child:hover .prod_cat{
             visibility: visible;
             opacity: 1;
