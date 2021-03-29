@@ -344,16 +344,89 @@ header{
                     font-size: 1rem;
                     padding-left: 0.3rem;
                 }
-				#navigation{
-					align-items: center;
-				}
+                #leave{
+                    display: none;
+                }
+                .navigation{
+                    overflow: hidden;
+                    height: 56px;
+                }
+                .link_category_type:first-of-type{
+                    display: flex;
+                }
 				.link_category_type:first-of-type h4{
+                    display: flex;
+                    align-items: center;
 					color: white;
 					font-weight: 500;
 					font-size: 1.2rem;
-					/*margin-top: 14.5px;*/
+                    height: 100%;
+                    height: 56px;
 				}
+                .link_category_type:first-of-type span{
+                    transform: rotateZ(90deg);
+                    font-size: 1.2rem;
+                    color: white;
+                    margin-top: 0.2rem;
+                }
 				.link_category{
 						width: 100vw;
 				}
+    .phone_nav{
+        background-color: white;
+        position: fixed;
+        left: 0;
+        height: 100vh;
+        overflow-y: scroll;
+    } 
+        .phone_nav .link_category_type{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #363636;
+            height: 3rem;
+            width: 100%;
+            text-align: center;
+            color: white;
+            padding: 0 10vw 0 10vw;
+        }
+        .phone_nav .link_category_type:first-of-type{
+            position: fixed;
+            bottom: 0;
+            z-index: 1;
+        }
+        .phone_nav .link_category_type h4{
+
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            margin-top: auto;
+            color: white;
+			font-weight: 500;
+			font-size: 1.2rem;
+        }
+            .navigation #leave{
+                visibility: hidden;
+            }
+            .phone_nav #leave{
+                display: inline;
+                position: fixed;
+                visibility: visible;
+                height: 1.8rem;
+                width: 1.8rem;
+                background: url(svg/leave.svg) no-repeat;
+                background-size: contain;
+                background-position: center;
+                border: 0px;
+                left: 2rem;
+                
+                bottom: 9.6px;
+                z-index: 2;
+            }
+            .phone_nav .link_category{
+                display: flex;
+                justify-content: center;
+                height: 4rem;
+                border-bottom: 1px solid #3636361e;
+            }
 }
