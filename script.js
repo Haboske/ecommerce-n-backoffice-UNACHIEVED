@@ -8,4 +8,12 @@ $(document).ready(function(){
                 $('#jqnav').addClass("phone_nav");
                 $('#jqnav').removeClass("navigation");
         });
+
+        $('.banner').click(function(){
+                if($('.banner #1').is(":visible")){
+                        console.log('le click est bien détecté')
+                        $('.banner #1').slideDown();
+                        // $('.banner #1').animate({left:"100px"},5000);
+                }
+        })
 })
