@@ -1,0 +1,25 @@
+@media screen and (min-width: 0px) and (max-width: 640px){
+    #recommendations{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5vh 20vw 5vh 20vw;
+    }
+        #recommendations article{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: 5vh 0 5vh 0;
+        }
+            #recommendations article img{
+                width: 250px;
+            }
+            #recommendations article p{
+                margin-top: 5vh;
+                font-weight: 600;
+            }
+}
+
