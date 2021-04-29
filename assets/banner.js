@@ -1,10 +1,3 @@
-function mooveBannerLeft(){
-    $('.banner').animate({
-        right: "100vw"
-    });
-    console.log("animation fini");
-};
-
 $(document).ready(function(){
     $('#right').on("click", function(){
         var position = $('.banner').position();

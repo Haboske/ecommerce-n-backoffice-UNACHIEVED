@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    width: auto;
+    width: 100vw;
     position: relative;
     z-index: 1;
 }
@@ -32,6 +32,48 @@
         .banner div:nth-child(3){
             background-color: chartreuse;
         }
+
+@media screen and (min-width: 1050px){
+    .banner{
+        margin-top: 10rem;
+    }
+    .banner_Carousel_slider{
+        top: 10rem;
+        width: 10vw;
+        min-width: 10vw;
+        height: 50vh;
+        position: absolute;    
+        background-size: 10%;
+        background-repeat: no-repeat;
+    }
+        .banner_Carousel_slider#left{
+            background-position: center;
+        }
+        .banner_Carousel_slider#right{
+            background-position: center;
+        }
+}
+
+@media screen and (min-width: 641px) and (max-width: 1049px){
+    .banner{
+        margin-top: 10.7rem;
+    }
+    .banner_Carousel_slider{
+        top: 10.7rem;
+        width: 10vw;
+        min-width: 10vw;
+        height: 50vh;
+        position: absolute;    
+        background-size: 30%;
+        background-repeat: no-repeat;
+    }
+        .banner_Carousel_slider#left{
+            background-position: center right;
+        }
+        .banner_Carousel_slider#right{
+            background-position: center left;
+        }
+}
 @media screen and (min-width: 0px) and (max-width: 640px){
     .banner{
         margin-top: 10.7rem;
