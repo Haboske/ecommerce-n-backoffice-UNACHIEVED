@@ -1,0 +1,97 @@
+.banner{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100vw;
+    position: relative;
+    z-index: 1;
+}
+    .banner div{
+        width: 100vw;
+        min-width: 100vw;
+        height: 50vh;
+        flex-grow: 1;   
+    }
+        .banner_Carousel_slider{
+            z-index: 100;
+        }
+        .banner_Carousel_slider#left {
+            left: 0;
+            background-image: url(../svg/left.png);
+        }
+        .banner_Carousel_slider#right {
+            right: 0;
+            background-image: url(../svg/right.png);
+        }
+            .banner div:nth-child(1){
+                background-color: red;
+            }
+            div#two{
+                background-color: blue;
+            }
+            .banner div:nth-child(3){
+                background-color: chartreuse;
+            }
+
+@media screen and (min-width: 1050px){
+    .banner{
+        margin-top: 10rem;
+    }
+    .banner_Carousel_slider{
+        top: 10rem;
+        width: 10vw;
+        min-width: 10vw;
+        height: 50vh;
+        position: absolute;    
+        background-size: 10%;
+        background-repeat: no-repeat;
+    }
+        .banner_Carousel_slider#left{
+            background-position: center;
+        }
+        .banner_Carousel_slider#right{
+            background-position: center;
+        }
+}
+
+@media screen and (min-width: 641px) and (max-width: 1049px){
+    .banner{
+        margin-top: 10.7rem;
+    }
+    .banner_Carousel_slider{
+        top: 10.7rem;
+        width: 10vw;
+        min-width: 10vw;
+        height: 50vh;
+        position: absolute;    
+        background-size: 30%;
+        background-repeat: no-repeat;
+    }
+        .banner_Carousel_slider#left{
+            background-position: center right;
+        }
+        .banner_Carousel_slider#right{
+            background-position: center left;
+        }
+}
+@media screen and (min-width: 0px) and (max-width: 640px){
+    .banner{
+        margin-top: 10.7rem;
+    }
+    .banner_Carousel_slider{
+        top: 10.7rem;
+        width: 15vw;
+        min-width: 15vw;
+        height: 50vh;
+        position: absolute;    
+        background-size: 50%;
+        background-repeat: no-repeat;
+    }
+        .banner_Carousel_slider#left{
+            background-position: center right;
+        }
+        .banner_Carousel_slider#right{
+            background-position: center left;
+        }
+
+}

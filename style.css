@@ -20,6 +20,7 @@ a, mark{
 
 header{
     position: fixed;
+    top: 0px;
     background-color: #363636;
     width: 100%;
     display: flex;
@@ -29,7 +30,7 @@ header{
     height: 20vh;
     padding: 0 10vw;
 }
-    header nav{
+    header nav:first-of-type{
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
@@ -37,20 +38,19 @@ header{
     }
             header nav:first-of-type a{
                 color: white;
-								font-size: 1rem;
-								display: flex;
+				font-size: 1rem;
+				display: flex;
             }
-						.link{
-							width: 10rem;
-							font-size: 0.1rem;
-						}
 						#link_account{
 							background: url(svg/account.svg)
 						}
 						#link_cart{
 							background: url(svg/cart.svg)
 						}
-						#link_cart,#link_account{
+                        #link_market{
+                            background: url(svg/market.svg);
+                        }
+						#link_cart,#link_account,#link_market{
 							background-position: center;
 							background-repeat: no-repeat;
 							background-size: contain;
@@ -88,17 +88,22 @@ header{
         header label{
             display: none;
         }
-        header nav:last-of-type{
-            display: flex;
-            flex-direction: row;
+        .link_category a{
+            text-transform: capitalize;
         }
 
 @media screen and (min-width: 1050px) and (max-width: 3444px){
+    header nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    }
     header{
-        height: 16vh;
+        height: 10rem;
         padding: 0 4vw;
         flex-direction: row;
-				align-items: center;
+		align-items: center;
     }
         header img{
             position: fixed;
@@ -108,73 +113,121 @@ header{
         }
         header nav:first-of-type{
             order: 3;
-						width: 30%;
-						margin-left: auto;
-						height: 2rem;
+			width: auto;
+			margin-left: auto;
+            margin-top: 10px;
+			height: 2rem;
         }
-				.link_cart_t,.link_account_t{
+				.link_cart_t,.link_account_t,.link_market_t{
 					display: flex;
 					align-items: center;
 					margin-left: 4vh;
 				}
-        header nav:first-of-type #link_account,header nav:first-of-type #link_cart{
+        header nav:first-of-type #link_account,header nav:first-of-type #link_cart, header nav:first-of-type #link_market{
             height: 2.3rem;
             width: 2.3rem;
-						margin-left: 1.5vh;
-				}
+			margin-left: 1.5vh;
+		}
 				.link_cart_t{
 					order: 1;
+					white-space: nowrap;
 				}
 				.link_account_t{
 					order: 2;
+					white-space: nowrap;
 				}
+                .link_market_t{
+                    display: inline;
+                }
         form{
             order: 2;
-            width: 35%;
+            width: auto;
+            flex-grow: 1;
             align-self: center;
-            margin: 2vh 0 0 23vh;
+            margin: 1vh 0 0 12.5rem;
         }
 				header form input[type=search]{
-					padding: 0 0 0 2vw
+					padding: 0 0 0 1vw;
+                    width: 100%;
 				}
 				header button[type=submit]{
-					width: auto;
+					width: 2.6rem;
+                    height: 2.6rem;
 				}
 				header button[type=submit] div{
-					width: 2.5rem;
-					height: 2.5rem;
+					width: 100%;
+					height: 100%;
 				}
         header nav:last-of-type{
+            order: 5;
+            margin: 0 0 1vh 12.5rem;
+			overflow-x: auto;
+            justify-content: start;
+            width: 70%;
+            flex-grow: 1;
             order: 4;
-            margin: 0 0 0 23vh;
-						overflow-x: scroll;
         }
-        header nav:last-child a:first-of-type{
+        header nav:last-of-type::-webkit-scrollbar{
             display: none;
-        }
-        header nav:last-child div{
-            flex-direction: row;
-            width: 500vw;
         }
         header nav:last-child div p{
             display: none;
         }
-        .prod_cat{
-            color: white;
-            margin-right: 3vw;
-            width: auto;
-            padding: 1vh 2vw;
-            white-space: nowrap;
-        }
         header nav:last-child .prod_tablet:nth-child(2){
             padding: 1vh 2vw 1vh 0;
         }
+				#leave{
+					display: none;
+				}
+                .navigation_button{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 2.6rem;
+                    height: 2.6rem;
+                    border: 0px;
+                    
+                    background-color: transparent;
+                   
+                }
+                div.right{
+                    background: url(svg/arrow.svg) no-repeat;
+                    background-size: 70%;
+                    background-position: center;
+                    height: 1.375rem;
+                    width: 1.375rem;
+                    animation: smoothmoove 2s infinite reverse;
+                    order: 5;
+                    margin-left: 0.5rem;
+                    margin-bottom: 1vh;
+                }
+				.link_category{
+					white-space: nowrap;
+					margin-right: 1.5rem;
+				}
+				.link_category a{
+					color: white;
+				}
+				.link_category_type{
+					display: none;
+				}
+				nav .navigation{
+					height: 2.5rem;
+					overflow-x: auto;
+					flex-direction: row-reverse;
+				}
 
 }
 @media screen and (min-width: 641px) and (max-width: 1049px){
+    header nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    }   
     header{
 				height: 10.7rem;
-        padding: 0.5vh 5vw 0.5vh 5vw;
+                padding: 0.5vh 5vw 0.5vh 5vw;
 				align-items: center;
     }
         header img{
@@ -186,7 +239,7 @@ header{
             order: 3;
             align-self: center;
             margin-left: auto;
-						width: 20%;
+						width: auto;
 						align-items: center;
         }
             header nav:first-of-type a{
@@ -200,6 +253,9 @@ header{
 				header nav:first-of-type  a.link_cart_t{
 					display: none;
 				}
+                header nav:first-of-type a.link_market_t{
+                    display: none;
+                }
 				#link_account{
 					height: 2rem;
 					width: 2rem;
@@ -209,28 +265,30 @@ header{
         form{
             order:2;
             height: 3.5rem;
-            width: 55%;
+            width: auto;
+            flex-grow: 2;
             align-self: center;
             margin-left: 2rem;
         }
         header input[type=search]{
             padding: 0 0 0 3vw;
+            width: 100%;
         }
         header input[type=search]::placeholder{
             font-size: 1.15rem;
+        }
+        header button[type=submit]{
+            width: 3.5rem;
+            height: 3.5rem;
         }
         header button[type=submit] div{
             width: 3rem;
             height: 3rem;
         }
-        header nav:last-child{
+        header nav:last-of-type{
             order: 4;
-        }
-        header nav:last-child a:first-of-type{
-            display: none;
-        }
-        .prod_tablet{
-            order: 2;
+            justify-content: start;
+            overflow-x: auto;
         }
         header nav:last-child div{
             display: flex;
@@ -260,13 +318,23 @@ header{
                 opacity: 1;
                 transition: ease 0.5s;
             }
-        .prod_cat{
-            color: white;
-            font-size: 1.1rem;
-        }
-        .prod_tablet{
-            margin-right: 4vw;
-        }
+				#leave{
+					display: none;
+				}
+				.link_category_type{
+					display: none;
+				}
+				.link_category{
+					white-space: nowrap;
+					margin-right: 1.5rem;
+				}
+				.link_category a{
+					color: white;
+				}
+				nav .navigation{
+					overflow: scroll;
+					flex-direction: row-reverse;
+				}
 }
 @media screen and (min-width: 0px) and (max-width: 640px){
 		header{
@@ -294,13 +362,16 @@ header{
 							font-size: 1rem;
 							align-items: center;
 						}
+                        header nav:first-of-type a.link_market_t{
+                            display: none;
+                        }
         form{
             width: 100%;
             height: 2.6rem;
             display: flex;
         }
             header input[type=search]{
-                width: 85%;
+                width:100%;
                 height: 100%;
 
                 padding: 0 4vw;
@@ -309,6 +380,10 @@ header{
                 header input[type=search]::placeholder{
                     color: #363636;
                     opacity: 0.7;
+                }
+                header button[type=submit]{
+                    width: 2.6rem;
+                    height: 2.6rem;
                 }
                 header button[type=submit] div{
                     width: 2.6rem;
@@ -378,7 +453,8 @@ header{
         left: 0;
         height: 100vh;
         overflow-y: scroll;
-    } 
+		padding: 0 0 48px 0;
+    }
         .phone_nav .link_category_type{
             display: flex;
             justify-content: center;
@@ -405,8 +481,15 @@ header{
 			font-weight: 500;
 			font-size: 1.2rem;
         }
+        header nav:last-of-type{
+            margin-left: 0;
+        }
+        header .phone_nav{
+            width: 100vw;
+        }
             .navigation #leave{
                 visibility: hidden;
+ 
             }
             .phone_nav #leave{
                 display: inline;
@@ -419,14 +502,35 @@ header{
                 background-position: center;
                 border: 0px;
                 left: 2rem;
-                
+
                 bottom: 9.6px;
                 z-index: 2;
             }
             .phone_nav .link_category{
                 display: flex;
                 justify-content: center;
+                align-items: center;
                 height: 4rem;
+                width: 100vw;
                 border-bottom: 1px solid #3636361e;
             }
+            .navigation_button{display: none;}
+}
+
+@keyframes smoothmoove{
+    0%{
+        transform: translateX(0rem);
+    }
+    45%{
+        transform: translateX(1rem);
+    }
+    50%{
+        transform: translateX(0.7rem);
+    }
+    55%{
+        transform: translateX(1rem);
+    }
+    100%{
+        transform: translateX(0rem);
+    }
 }

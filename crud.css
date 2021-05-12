@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+*,:root{
+    padding: 0 0;
+    margin: 0 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+body{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+h1{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 5rem;
+    align-items: center;
+    background-color: #363636;
+    color:white;
+    width: 100vw;
+    text-align: center;
+    height: 5rem;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 5rem;
+    height: calc(100vh - 5rem);
+    width: 20vw;
+    background-color: rgb(247, 247, 247);
+}
+
+body{
+    margin-left: 20vw;
+    background-image: url(svg/crudback4.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 5rem;
+    height: calc(100vh - 5rem);
+    padding: 3rem 3rem;   
+}
+tr{
+    display: flex;
+    width: 100%;
+    margin: 1vh 0 1vh 0;
+}
+tbody tr{
+    margin: 2vh 0 2vh 0;
+}
+    th,td{
+        padding: 1rem 1rem;
+        /* margin-left: 2rem; */
+        /* border-radius: 10rem; */
+        /* box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.05); */
+    }
+    th{
+        background-color: #363636;
+        color: white;
+        
+        font-size: 1.3rem;
+        /* box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.05); */
+        
+    }
+    td{
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    td.button form{
+        border: 0px;
+        height: 100%;
+        width: 100%;
+    }
+    td.button form input[type=submit]{
+        height: 100%;
+        width: 100%;
+        border: 0;
+        cursor: pointer;
+        font-weight: 600;
+        transition: ease 0.2s;
+        
+        background-repeat: no-repeat;
+        background-size: 40%;
+        background-position: center;
+    }
+    td.button form input[type=submit]:hover, td.button form:hover, td.button:hover{
+        background-color: #363636;
+        color: white;
+        transition: ease 0.2s;
+    }
+    td.button_Delete form input[type=submit],td.button_Delete form,td.button_Delete{
+        background-color: rgb(189, 22, 22);
+        color: white
+    }
+    td.button_Modif form input[type=submit],td.button_Modif form,td.button_Modif{
+        background-color: rgb(43, 108, 194);
+        color: white;
+    }
+    td.button_Delete form input[type=submit]{
+        background-image: url(svg/removeUser.svg);
+    }
+    td.button_Modif form input[type=submit]{
+        background-image: url(svg/editUser.svg);
+    }
+    td.button_Modif{
+        margin-left: 1rem;
+    }
+    td.button{
+        padding: 0 0;
+        overflow: hidden;
+        width: 4rem;
+    }
+    td.button_More button{
+        cursor: pointer;
+        font-weight: 600;
+        width: 100%;
+        height: 100%;
+        border: 0px;
+        background-color: transparent;
+        background-image: url(svg/moreInfoUser.svg);
+        background-repeat: no-repeat;
+        background-size: 40%;
+        background-position: center;
+        transition: ease 0.2s;
+    }
+    td.button_More button:hover{
+        color: white;
+        background-image: url(svg/moreInfoUser_Hover.svg);
+
+    }
+
+    .user_Id{
+        width: 2rem;
+    }
+    td.user_Id{ 
+        font-size: 1rem;
+        font-weight: 500;
+
+    }
+    td.user_Id{
+        /* background-color: rgb(238, 238, 238); */
+        background-color: rgb(248, 248, 248);  
+    }
+        .user_LastN,.user_FirstN{
+            width: 10rem;
+        }
+    td.user_FirstN{
+        background-color: rgb(248, 248, 248);  
+    }
+        .user_Email{
+            width: 20rem;
+            justify-content: flex-start;
+            padding-right: 2rem;
+        }
+        .user_Type{
+            width: 6rem;
+        }
+    td.user_Type{
+        background-color: rgb(248, 248, 248);  
+    }
+
+    .crud_Popup{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 5rem;
+        right: 0;
+        width: 80vw;
+        height: calc(100vh - 5rem);
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+        .crud_Popup_Content{
+            padding: 2rem 2rem;
+            background-color: white;
+            height: fit-content;
+            width: fit-content;
+            margin-bottom: 5rem;
+        }
+        .crud_Popup_Content form{
+            width: 100%;
+            display: flex;
+            margin-top: 2rem;
+            justify-content: space-around;
+        }
+            .crud_Popup_Content form input[type=submit]{
+                border: 0px;
+                width: 100%;
+                height: 4rem;
+                cursor: pointer;
+
+                font-size: 1.2rem;
+                font-weight: 600;
+            }
+            .delete_Confirm{
+                background-color: rgb(189, 22, 22);
+                color: white;
+                transition: ease 0.2s;
+            }
+            .delete_Confirm:hover{
+                background-color: rgb(243, 36, 36);;
+            }
+            .delete_Dismiss{
+                transition: ease 0.2s;
+            }
+            .delete_Dismiss:hover{
+                background-color: rgb(89, 173, 81);
+                color: white;
+            }
+
+        .modif_Title{
+            width: 100%;
+            text-align: center;
+            margin: 0 0 2rem 0;
+            font-size: 2rem;
+        }
+        form.modif_User{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            width: 30vw;
+            margin-top: 0;
+        }
+            form.modif_User div label{
+                font-size: 1.4rem;
+            }
+            form.modif_User input[type=submit]{
+                margin: 1rem 0 1rem 0;
+            }
+                form.modif_User input[type=submit].modif_Confirm{
+                    background-color: rgb(43, 108, 194);
+                    color: white;
+                    transition: ease 0.2s;
+                }
+                form.modif_User input[type=submit].modif_Confirm:hover{
+                    background-color: #363636;
+                }
+                form.modif_User input[type=submit].modif_Dismiss{
+                    transition: ease 0.2s;
+                }
+                form.modif_User input[type=submit].modif_Dismiss:hover{
+                    background-color: #363636;
+                    color: white;
+                }
+            form.modif_User div{
+                margin: 0 0 2rem 0;
+            }
+            form.modif_User div.input_Text{
+                width: 49%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+            }
+                div.input_Text input[type=text]{
+                    width: 90%;
+                    border: 0px;
+                    height: 4rem;
+                    font-size: 1.5rem;
+                    background-color: rgb(245, 245, 245);
+                    padding: 0 5% 0 5%;
+                    color: #363636;
+                }
+            form.modif_User div.input_Email{
+                width: 100%;
+            }
+                div.input_Email input[type=email]{
+                    width: 90%;
+                    border: 0px;
+                    height: 4rem;
+                    font-size: 1.5rem;
+                    background-color: rgb(245, 245, 245);
+                    padding: 0 5% 0 5%;
+                    color: #363636;
+                }
+        .input_Radio input[type=radio]{
+            display: none;
+        }
+        .input_Radio input[type=radio] + label.radio_Label::before{
+            display: block;
+            content: "";
+            height: 1.5rem;
+            width: 1.5rem;
+            background-color: transparent;
+            border-radius: 1rem;
+            border: 1px solid #363636;
+            margin-right: 1vw;
+            cursor: pointer;
+        }
+        .input_Radio input[type=radio]:checked + label.radio_Label::before{
+            background-color: #363636;
+            background: radial-gradient(circle, rgba(51,51,51,1) 51%, rgba(255,255,255,1) 52%, rgba(255,255,255,1) 72%, rgba(51,51,51,1) 73%);                /* animation: checkingradio 0.2s; */
+            background-position: center;
+            animation: checkingradio 0.2s;
+        }
+        label.radio_Label{
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+
+
+
+
+
+
+    .user_Add{
+        margin-left: 1rem;
+        padding: 0 0 0 0;
+        width: 4rem;
+        background-color: rgb(60, 155, 60);
+    }
+        .user_Add form, .user_Add form input[type=submit]{
+            width: 100%;
+            height: 100%;
+            border: 0px;
+            background-color: rgb(60, 155, 60);
+            font-size: 2rem;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .user_Add form input[type=submit]{
+                background-color: rgb(60, 155, 60);
+                background-image: url(svg/addUser.svg);
+                background-size: 40%;
+                background-repeat: no-repeat;
+                background-position: center; 
+                transition: ease 0.2s;
+        } 
+        .user_Add form input[type=submit]:hover{
+            background-color: #363636;
+        }
+
+@keyframes checkingradio{
+    0%{
+        background-size: 150%;
+    }
+    100%{
+        background-size: 100%;
+    }
+}
